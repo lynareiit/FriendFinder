@@ -10,6 +10,6 @@ The running application on Heroku can be found at <>
 <h3>Setup</h3>
 <p>1. Clone the repository from GitHub.</p>
 <p>2. Install the required node modules by running 'npm install' from the root project directory using your Git terminal.</p>
-<p>. Run 'node server.js' to launch the server.</p>
+<p>3. Run 'node server.js' to launch the server.</p>
 <p>4. Connect to localhost:3000 on your browser, or whatever port appears in your terminal log.</p>
 <p>5. Click Survey, fill out and submit the form to find your perfect match!</p>
