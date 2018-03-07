@@ -4,12 +4,12 @@ Friend Finder is Heroku-run application assigned for our Week 13 homework assign
 
 The running application on Heroku can be found at <>
 <hr>
-<h1>Installation Instructions</h1><br>
+<h1>Installation Instructions</h1>
 <h3>Requirements</h3>
 - Node.js
 <h3>Setup</h3>
-1. Clone the repository from GitHub.
-2. Install the required node modules by running 'npm install' from the root project directory using your Git terminal.
-3. Run 'node server.js' to launch the server.
-4. Connect to localhost:3000 on your browser, or whatever port appears in your terminal log.
-5. Click Survey, fill out and submit the form to find your perfect match!
+<p>1. Clone the repository from GitHub.</p>
+<p>2. Install the required node modules by running 'npm install' from the root project directory using your Git terminal.</p>
+<p>. Run 'node server.js' to launch the server.</p>
+<p>4. Connect to localhost:3000 on your browser, or whatever port appears in your terminal log.</p>
+<p>5. Click Survey, fill out and submit the form to find your perfect match!</p>
