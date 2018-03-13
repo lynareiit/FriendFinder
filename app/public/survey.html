@@ -8,8 +8,6 @@
 
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
@@ -194,9 +192,70 @@
 
           </div>
 
-</body>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	
 
+	<script type="text/javascript">
+		$(".submit").on("click", function() {
+			event.preventDefault();
+				function confirmForm() {
+					var isValid = true;
+					$(".form-control").each(function() {
+						if ($(this).val() === "") {
+							isValid = false;
+						}
+					});
 
+					$(".chosen-select").each(function() {
+						if ($(this).val() === "") {
+							isValid = false;
+						}
+					});
+					return isValid;
+				}
+
+				if (confirmForm()) {
+					var answers = {
+						name: $("#name").val().trim(),
+						photo: $("#photo").val().trim(),
+						q1: $("q1").val().trim(),
+						q2: $("q2").val().trim(),
+						q3: $("q3").val().trim(),
+						q4: $("q4").val().trim(),
+						q5: $("q5").val().trim(),
+						q6: $("q6").val().trim(),
+						q7: $("q7").val().trim(),
+						q8: $("q8").val().trim(),
+						q9: $("q9").val().trim(),
+						q10: $("q10").val().trim(),
+					};
+
+					$.post("/api/friends", answers, function(data) {
+						$("#match-name").text(data.name);
+						$("#match-img").attr("src", data.photo);
+						$("#results-modal").modal("toggle");
+						
+						$("#name").val("");
+						$("#photo").val("");
+						$("#q1").val("");
+						$("#q2").val("");
+						$("#q3").val("");
+						$("#q4").val("");
+						$("#q5").val("");
+						$("#q6").val("");
+						$("#q7").val("");
+						$("#q8").val("");
+						$("#q9").val("");
+						$("#q10").val("");
+					});
+				}
+
+				else {
+					alert("Ooops! Looks like you forgot something!");
+				}
+			});
+
+	</script>
     <footer class="footer">
       <div class="container">
         <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friend-finder">GitHub Repo</a></p>
