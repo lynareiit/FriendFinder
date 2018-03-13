@@ -29,15 +29,15 @@ app.post("/api/friends", function(req, res) {
 		name: req.body.name,
 		photo: req.body.photo,
 		scores: [
-			req.body.q1
-			req.body.q2
-			req.body.q3
-			req.body.q4
-			req.body.q5
-			req.body.q6
-			req.body.q7
-			req.body.q8
-			req.body.q9
+			req.body.q1,
+			req.body.q2,
+			req.body.q3,
+			req.body.q4,
+			req.body.q5,
+			req.body.q6,
+			req.body.q7,
+			req.body.q8,
+			req.body.q9,
 			req.body.q10
 		]
 	};
@@ -48,9 +48,9 @@ app.post("/api/friends", function(req, res) {
 		var delta = 0;
 		var friend = friends[i];
 		for (n = 0; n < friend.scores.length; n++) {
-			delta += Math.abs(parseInt(user.scores[n] - friend.scores[n]);
+			delta += Math.abs(parseInt(user.scores[n] - friend.scores[n]))
 		}
-		mathes.push(delta);
+		matches.push(delta);
 	}
 
 	var index = 0;
@@ -58,8 +58,8 @@ app.post("/api/friends", function(req, res) {
 	var match;
 
 	for (i = 0; i < matches.length; i++) {
-		if (matches[i];
-		match = i;
+		if (matches[i]) {
+			match = i
 		}
 	}
 
